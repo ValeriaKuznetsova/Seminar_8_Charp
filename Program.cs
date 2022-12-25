@@ -156,58 +156,58 @@ void SortedArray(int[,] array) // функция сортировки строк
 
 // Задача 60.
 
-Console.Write("Введите размеры массива через пробел: ");
-string[] numbers = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
-int[,,] array3D = GetArray3D(new int[] { int.Parse(numbers[0]), int.Parse(numbers[1]), int.Parse(numbers[2]), }, 10, 99);
-PrintArray3D(array3D);
+// Console.Write("Введите размеры массива через пробел: ");
+// string[] numbers = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+// int[,,] array3D = GetArray3D(new int[] { int.Parse(numbers[0]), int.Parse(numbers[1]), int.Parse(numbers[2]), }, 10, 99);
+// PrintArray3D(array3D);
 
-int[,,] GetArray3D(int[] sizes, int min, int max)
-{
-    int[,,] result = new int[sizes[0], sizes[1], sizes[2]];
-    for (int i = 0; i < result.GetLength(0); i++)
-    {
-        for (int j = 0; j < result.GetLength(1); j++)
-        {
-            int k = 0;
-            while (k < result.GetLength(2))
-            {
-                int element = new Random().Next(min, max + 1);
-                if (FindElement(result, element)) continue;
-                result[i, j, k] = element;
-                k++;
-            }
-        }
-    }
-    return result;
-}
+// int[,,] GetArray3D(int[] sizes, int min, int max)
+// {
+//     int[,,] result = new int[sizes[0], sizes[1], sizes[2]];
+//     for (int i = 0; i < result.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < result.GetLength(1); j++)
+//         {
+//             int k = 0;
+//             while (k < result.GetLength(2))
+//             {
+//                 int element = new Random().Next(min, max + 1);
+//                 if (FindElement(result, element)) continue;
+//                 result[i, j, k] = element;
+//                 k++;
+//             }
+//         }
+//     }
+//     return result;
+// }
 
-bool FindElement(int[,,] array, int elmnt)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            for (int k = 0; k < array.GetLength(1); k++)
-            {
-                if (array[i, j, k] == elmnt) return true;
-            }
-        }
-    }
-    return false;
-}
+// bool FindElement(int[,,] array, int elmnt)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array.GetLength(1); k++)
+//             {
+//                 if (array[i, j, k] == elmnt) return true;
+//             }
+//         }
+//     }
+//     return false;
+// }
 
-void PrintArray3D(int[,,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            for (int k = 0; k < array.GetLength(1); k++)
-            {
-                Console.Write($"{array[i, j, k]} ({i},{j},{k}) ");
-            }
-            Console.WriteLine();
-        }
-        Console.WriteLine();
-    }
-}
+// void PrintArray3D(int[,,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array.GetLength(1); k++)
+//             {
+//                 Console.Write($"{array[i, j, k]} ({i},{j},{k}) ");
+//             }
+//             Console.WriteLine();
+//         }
+//         Console.WriteLine();
+//     }
+// }
